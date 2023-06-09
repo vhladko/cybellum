@@ -6,7 +6,7 @@
 Thank you for your interest in the Front-end Developer position. As part of our selection process, 
 we have prepared a test for you to demonstrate your skills and expertise. 
 The task involves implementing a login page based on a mockup design using the provided 
-starter App with [Create React App](https://github.com/facebook/create-react-app), [Material UI](https://mui.com/core/), [React Hook Form](https://react-hook-form.com/) and [JSON Server](https://github.com/typicode/json-server).
+starter App with [Create React App](https://github.com/facebook/create-react-app), [Material UI](https://mui.com/core/), [React Router](https://reactrouter.com/en/main/start/tutorial), [React Hook Form](https://react-hook-form.com/) and [JSON Server](https://github.com/typicode/json-server).
 
 Please use the provided starter App as a foundation for your implementation. Feel free to make use of the available dependencies and resources to accomplish the task efficiently.
 
