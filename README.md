@@ -22,10 +22,11 @@ Here are the expertise and skills we would like you to demonstrate while develop
 * **API Integration**: Utilize Json server to mock an API for user authentication. Implement API calls to handle user login requests and simulate successful or failed login responses. 
 It is preferred  to use RTK Query for that.
 * **Error Handling**: Using React Hook Form, handle potential errors during API requests or form submission and provide meaningful error messages to the user.
-* **Responsive Design**: Ensure the login page is responsive and displays well on different screen sizes and devices.
+* **Responsive Design**: Ensure the login page is responsive and displays well on different Material UI breakpoints.
 * **Code Quality**: Follow best practices for code organization, maintainability, and readability. Write clean and well-documented code that adheres to established coding standards.
 * **Git Version Control**: Use Git for version control and commit your code with clear and meaningful commit messages.
 * **TypeScript:** Utilize TypeScript throughout the project to enforce type safety, provide enhanced development experience, and improve code quality.
+* **Testing** with Jest: Write comprehensive unit tests using Jest to ensure the functionality and integrity of your code. Cover critical scenarios and edge cases to validate the login page's behavior.
 
 You have one working day to complete the task. Please provide the final result in a new repository on your account on GitHub or GitLab. Share the repository link with us when you submit your solution.
 
@@ -34,6 +35,7 @@ We look forward to reviewing your implementation and assessing your skills in fr
 ## Figma mockup
 
 You can find it [here](https://www.figma.com/file/bBRBq0jMSO3JBzWTdhNvA4/FE-developer-exercise?type=design&node-id=103%3A181&t=fNNEhlXUEPRfZnD4-1).
+Password to access this file will be provided additionally.
 
 ## Login Page
 
