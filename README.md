@@ -10,7 +10,7 @@ starter App with [Create React App](https://github.com/facebook/create-react-app
 
 Please use the provided starter App as a foundation for your implementation. Feel free to make use of the available dependencies and resources to accomplish the task efficiently.
 
-Here are the expertise and skills we would like you to demonstrate while developing the login page:
+Here are the expertise and skills we would like you to demonstrate while developing the login page. **Please read carefully**:
 
 * **Project Files and Folders**: Demonstrate your understanding of the importance of project organization and maintainability by creating a well-structured project and folder architecture. Follow best practices for organizing components, styles, utilities, and other relevant files to ensure scalability and ease of maintenance.
 * **React**: Showcase your proficiency in React by structuring the login page components and managing the application state efficiently.
@@ -28,7 +28,9 @@ It is preferred  to use RTK Query for that.
 * **TypeScript:** Utilize TypeScript throughout the project to enforce type safety, provide enhanced development experience, and improve code quality.
 * **Testing** with Jest: Write comprehensive unit tests using Jest to ensure the functionality and integrity of your code. Cover critical scenarios and edge cases to validate the login page's behavior.
 
-You have one working day to complete the task. Please provide the final result in a new repository on your account on GitHub or GitLab. Share the repository link with us when you submit your solution.
+**You have one working day to complete the task.**
+
+***Please provide a final result in a new repository on your account on GitHub or GitLab. Share the repository link with us when you submit your solution.***
 
 We look forward to reviewing your implementation and assessing your skills in frontend development. If you have any questions or need further clarification, please don't hesitate to reach out to us. 
 
@@ -38,17 +40,19 @@ You can find it [here](https://www.figma.com/file/bBRBq0jMSO3JBzWTdhNvA4/FE-deve
 Password to access this file will be provided additionally.
 
 ## Login Page
-
+**Please read carefully. Feel free to ask questions.**
 * Use the React and React Router to protect root path `/` from unauthorized access.
 * Redirect unauthorized users to the `/login` page
-* Implement Login page from provided mockup
+* Implement Login page from provided mockup.\
+**Note**. It is important to make Login page exactly same as mockup 
 * Integrate login POST request to the endpoint [http://localhost:7000/login](http://localhost:7000/login)\
 Use next credentials for success login.\
 Username: `user@email.com`\
 Password: `UserPassword`
 
 ```
-POST Payload:
+POST http://localhost:7000/login
+Payload:
 {
     email: string
     password: string
@@ -57,7 +61,19 @@ POST Payload:
 * Handle Errors in the form
 * After success login store accessToken and Email. 
 * Redirect to the home page `/`
-* Show `Welcome to Cybellum!` message in the middle of the screen
+* Using `accessToken`, get and show the first (`"id": 1`) message from [http://localhost:7000/notifications](http://localhost:7000/notifications) in the middle of the screen
+```
+GET http://localhost:7000/notifications
+Response:
+[
+  {
+    "id": string,
+    "title": string,
+    "description": string,
+    "created": string,
+  }
+]
+```
 
 ### That's it :) Thank you!
 

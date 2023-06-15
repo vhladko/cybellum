@@ -12,7 +12,8 @@ const JSON_SERVER_PORT = process.env.JSON_SERVER_PORT || 7000;
 
 const rules = auth.rewriter({
   // Permission rules
-  users: 600,
+  users: 660,
+  notifications: 660,
 });
 
 server.use(middlewares);
