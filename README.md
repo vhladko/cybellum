@@ -10,12 +10,24 @@ starter App with [Create React App](https://github.com/facebook/create-react-app
 
 Please use the provided starter App as a foundation for your implementation. Feel free to make use of the available dependencies and resources to accomplish the task efficiently.
 
-Here are the expertise and skills we would like you to demonstrate while developing the login page. **Please read carefully**:
+Here are the expertise and skills we would like you to demonstrate while developing the login page.
+**Please read carefully**.
+
+Basics.
+
+* **Run Present Mode in Figma**: Check how elements interact with a user on page. Check different states.
+* **Slicing, Mockup compliance**: Be attended to details. Be sure that UI elements and composition match provided mockup. Width, height, colors, spacing and other properties of elements are highly valuable in this test.
+* **Material UI**: Utilize Material UI components and styles to create a visually appealing and responsive login form that closely matches the mockup design.
+* **Styling**: All the styling elements should be in Styled Components, MUI default theme or MUI `sx` components property. Don’t use inline styling or scss/css files.
+
+**Review your code, components and layout here.\
+Make sure that UI components matching provided mockup: sizes, spacings, colors, hover states, etc...\
+Make sure layout is looking good on different screen sizes.**
+
+Only if you are sure you complete the Basics, you may continue.
 
 * **Project Files and Folders**: Demonstrate your understanding of the importance of project organization and maintainability by creating a well-structured project and folder architecture. Follow best practices for organizing components, styles, utilities, and other relevant files to ensure scalability and ease of maintenance.
 * **React**: Showcase your proficiency in React by structuring the login page components and managing the application state efficiently.
-* **Material UI**: Utilize Material UI components and styles to create a visually appealing and responsive login form that closely matches the mockup design.
-* **Styling**: All the styling elements should be in Styled Components, MUI default theme or MUI `sx` components property. Don’t use inline styling or scss/css files.
 * **Redux**: Implement Redux to manage the authentication state, including actions and reducers for handling login functionality.
 * **Form Validation**: Validate user input and display appropriate error messages for invalid inputs, such as invalid email or password formats.
 * **Routing**: Set up routing using React Router to navigate between pages, such as the login page and potential future pages.
