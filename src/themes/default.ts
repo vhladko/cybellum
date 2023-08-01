@@ -5,6 +5,9 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   typography: {
     fontFamily: ['"Noto Sans"', '"Ubuntu"', '"Helvetica Neue"', 'sans-serif'].join(','),
+    button: {
+      textTransform: 'unset',
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -22,20 +25,86 @@ const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: ({ theme, ownerState }) => ({
+          ...(ownerState.size === 'small' && {
+            padding: theme.spacing(0.25, 0.5),
+          }),
+          ...(ownerState.size === 'medium' && {
+            padding: theme.spacing(0.5, 1),
+          }),
+        }),
+      },
+    },
+    MuiInputLabel: {
+      defaultProps: {
+        shrink: true,
+      },
+      styleOverrides: {
+        root: ({theme }) => ({
+          fontSize: theme.typography.body2.fontSize,
+          lineHeight: theme.typography.body2.lineHeight,
+          letterSpacing: 0.25,
+        }),
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: 'standard',
+      },
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          marginLeft: theme.spacing(2),
+        }),
+      },
+    },
+    MuiInput: {
+      styleOverrides: {
+        root: ({ ownerState, theme }) => ({
+          ...((ownerState.formControl as any).variant === 'standard' && {
+            height: theme.spacing(6),
+            borderRadius: theme.shape.borderRadius,
+            border: '1px solid #7b7b7b',
+            ':after': {
+              content: 'none',
+            },
+            ':before': {
+              content: 'none',
+            },
+          }),
+        }),
+        input: ({ theme }) => ({
+          padding: theme.spacing(1.5, 2),
+        }),
+      },
+    },
   },
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#4d4d4d',
     },
     secondary: {
-      main: '#19857b',
+      main: '#baa182',
+      dark: '#b69d7f',
+      contrastText: '#2a2118',
     },
     error: {
       main: red.A400,
+      light: '#ba1a1a',
     },
     background: {
-      default: '#f8f8f8',
+      default: '#f9f9fa',
     },
+    action: {
+      hoverOpacity: 0.08,
+    },
+    text: {
+      primary: '#1c1b1f',
+      secondary: '#4d4d4d'
+    }
   },
 });
 
