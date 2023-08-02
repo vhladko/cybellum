@@ -8,6 +8,11 @@ const theme = createTheme({
     button: {
       textTransform: 'unset',
     },
+    h1: {
+      fontSize: '3.5rem',
+      letterSpacing: -0.5,
+      lineHeight: 1.143,
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -22,6 +27,9 @@ const theme = createTheme({
           fontFamily: ['"Noto Sans"', '"Ubuntu"', '"Helvetica Neue"', 'sans-serif'].join(','),
           height: '100%',
           overflowY: 'scroll',
+        },
+        '#root': {
+          height: '100%',
         },
       },
     },
@@ -40,12 +48,20 @@ const theme = createTheme({
     MuiInputLabel: {
       defaultProps: {
         shrink: true,
+        disableAnimation: true,
       },
       styleOverrides: {
-        root: ({theme }) => ({
+        root: ({ theme, ownerState }) => ({
           fontSize: theme.typography.body2.fontSize,
           lineHeight: theme.typography.body2.lineHeight,
           letterSpacing: 0.25,
+          ...((ownerState.formControl as any).variant === 'standard' && {
+            transform: 'unset',
+            position: 'relative',
+            '+ .MuiInput-root': {
+              marginTop: 0,
+            },
+          }),
         }),
       },
     },
@@ -81,6 +97,14 @@ const theme = createTheme({
         }),
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: () => ({
+          lineHeight: 1.33,
+          letterSpacing: 0.4,
+        })
+      }
+    }
   },
   palette: {
     primary: {
@@ -92,8 +116,7 @@ const theme = createTheme({
       contrastText: '#2a2118',
     },
     error: {
-      main: red.A400,
-      light: '#ba1a1a',
+      main: '#ba1a1a',
     },
     background: {
       default: '#f9f9fa',
@@ -103,8 +126,8 @@ const theme = createTheme({
     },
     text: {
       primary: '#1c1b1f',
-      secondary: '#4d4d4d'
-    }
+      secondary: '#4d4d4d',
+    },
   },
 });
 

@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './reducers';
+import { loginApi } from './store/login/loginApi';
+import { notificationApi } from './store/notifications/notificationApi';
 // ...
 
 const store = configureStore({
   reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production',
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([]),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([loginApi.middleware, notificationApi.middleware]),
 });
 
 export default store;
