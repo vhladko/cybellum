@@ -1,7 +1,9 @@
 import { ErrorOutline } from '@mui/icons-material';
 import { Box, Button, InputAdornment, TextField, useMediaQuery, useTheme } from '@mui/material';
 import { Controller, FieldValues, useForm } from 'react-hook-form';
+import { redirect, useNavigate } from 'react-router';
 import logo from '../../../assets/images/logo.svg';
+import { useAuth } from '../../common/auth/auth';
 import { usePostLoginMutation } from '../../store/login/loginApi';
 import { LeftSection, PageWrapper, RightSection, Title } from './styled';
 
@@ -17,16 +19,19 @@ export const LoginPage = () => {
       password: '',
     },
   });
+  const auth = useAuth();
+  const navigate = useNavigate();
   const [login, { isLoading }] = usePostLoginMutation();
   const theme = useTheme();
   const isUpLg = useMediaQuery(theme.breakpoints.up('lg'));
 
-  console.log(errors);
   async function onSubmit(data: FieldValues) {
     try {
-      const { accessToken, username } = await login({ username: data.username, password: data.password }).unwrap();
+      const { accessToken, user } = await login({ username: data.username, password: data.password }).unwrap();
+      auth.login(user, accessToken);
+      navigate('/');
     } catch (e) {
-      setError('root', { type: '400', message: "The email or password you entered don't match" });
+      setError('root', { type: '401', message: "The email or password you entered don't match" });
     }
   }
 
@@ -38,7 +43,7 @@ export const LoginPage = () => {
           Welcome to the
           {isUpLg && <br />} Product Security Platform
         </Title>
-        <Box component="form" sx={{ width: 400 }} onSubmit={handleSubmit(onSubmit)}>
+        <Box component="form" autoComplete='off' sx={{ width: 400 }} onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="username"
             control={control}
@@ -70,7 +75,7 @@ export const LoginPage = () => {
                 fullWidth
                 {...field}
                 error={!isValid}
-                helperText={errors.root?.message}
+                helperText={!isValid && errors.root?.message}
                 InputProps={{
                   endAdornment: !isValid && (
                     <InputAdornment position="end" sx={{ mr: 1.5 }}>

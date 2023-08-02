@@ -8,7 +8,7 @@ export const loginApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     postLogin: builder.mutation<PostLoginResult, PostLoginQueryArg>({
-      query: ({ username, password }) => ({ url: `/login`, method: 'POST', body: { username, password } }),
+      query: ({ username, password }) => ({ url: '/login', method: 'POST', body: { email: username, password } }),
     }),
   }),
 });

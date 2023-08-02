@@ -1,13 +1,16 @@
-import { Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import { useGetNotificationQuery } from '../../store/notifications/notificationApi';
 
 export const HomePage = () => {
-    return <div>
-    <Button color="primary" size="small" >Primary small</Button>
-    <Button color="primary" size="medium" >Primary medium</Button>
-    <Button color="secondary">Secondary</Button>
-    <Button color="secondary" variant="contained">Secondary</Button>
-    <Button variant="contained">Another</Button>
-    Home
-
-    </div>
-}
+  const { data: notification } = useGetNotificationQuery();
+  return (
+    <Box sx={{ m: 5 }}>
+      <Typography variant="h1" textAlign="center">
+        {notification?.title}
+      </Typography>
+      <Typography variant="body1" textAlign="center">
+        {notification?.description}
+      </Typography>
+    </Box>
+  );
+};

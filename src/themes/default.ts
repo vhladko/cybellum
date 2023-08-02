@@ -1,4 +1,3 @@
-import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
 // A custom theme for this app
@@ -91,6 +90,9 @@ const theme = createTheme({
               content: 'none',
             },
           }),
+          ...(ownerState.error && {
+            borderColor: theme.palette.error.main,
+          }),
         }),
         input: ({ theme }) => ({
           padding: theme.spacing(1.5, 2),
@@ -102,9 +104,9 @@ const theme = createTheme({
         root: () => ({
           lineHeight: 1.33,
           letterSpacing: 0.4,
-        })
-      }
-    }
+        }),
+      },
+    },
   },
   palette: {
     primary: {

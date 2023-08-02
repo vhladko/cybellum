@@ -5,5 +5,10 @@ export interface PostLoginQueryArg {
 
 export interface PostLoginResult {
   accessToken: string;
-  username: string;
+  user: User;
+}
+
+export interface User {
+  email: string,
+  id: number;
 }
